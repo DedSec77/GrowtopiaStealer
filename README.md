@@ -6,7 +6,7 @@ Other Version: https://github.com/DedSec77/CyberStealer
 - Steal IP Address
 - Steal Growtopia save.dat
 - Send screenshot
-- Send copied text
+- Send Clipboard text
 - Send to webhook
 ## Setup:
 ![Tutorial](https://user-images.githubusercontent.com/65458800/129596033-3974eb92-e80a-455d-863a-f78238251f73.png)
