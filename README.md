@@ -1,2 +1,2 @@
 # GrowtopiaStealer
-Growtopia stealer written at C# that steal save.dat, mac address, IP information, etc...
+GrowtopiaStealer powerful stealer that steals save.dat, mac address, IP information, etc... Written in C#.
