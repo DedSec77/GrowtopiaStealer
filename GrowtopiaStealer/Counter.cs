@@ -10,5 +10,6 @@ namespace GrowtopiaStealer
     {
         public static int Growtopia = 0;
         public static int Discord = 0;
+        public static int VisualStudio = 0;
     }
 }
