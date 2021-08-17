@@ -14,6 +14,6 @@ Other Version: https://github.com/DedSec77/CyberStealer
 And build you solution
 ![Build](https://user-images.githubusercontent.com/65458800/129596228-2725f054-e58d-40e1-8497-bb5b389e6ea4.jpg)
 ## Screenshot:
-![GrowtopiaStealerV2](https://user-images.githubusercontent.com/65458800/129626728-66f645f9-f614-4795-bc1c-b5cd23f84a9a.jpg)
+![GrowtopiaStealerV3](https://user-images.githubusercontent.com/65458800/129650817-7ec5a6da-36fb-483a-8fa0-1a2b50f82ed4.jpg)
 ## ToDo
 - idk comment your ideas at issues
