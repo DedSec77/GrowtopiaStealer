@@ -14,6 +14,7 @@ Other Version that stealer: https://github.com/DedSec77/CyberStealer
 ![Tutorial](https://user-images.githubusercontent.com/65458800/129596033-3974eb92-e80a-455d-863a-f78238251f73.png)
 And build you solution
 ![Build](https://user-images.githubusercontent.com/65458800/129596228-2725f054-e58d-40e1-8497-bb5b389e6ea4.jpg)
+## If you want single exe file without dll use https://github.com/mkaring/ConfuserEx/releases
 ## Screenshot:
 ![GrowtopiaStealerV3](https://user-images.githubusercontent.com/65458800/129650817-7ec5a6da-36fb-483a-8fa0-1a2b50f82ed4.jpg)
 ## ToDo
