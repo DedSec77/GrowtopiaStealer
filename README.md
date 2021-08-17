@@ -8,6 +8,6 @@ And build your solution
 ![Build](https://user-images.githubusercontent.com/65458800/129596228-2725f054-e58d-40e1-8497-bb5b389e6ea4.jpg)
 ## If you want single exe file without dll use https://github.com/mkaring/ConfuserEx/releases
 ## Screenshot:
-![GrowtopiaStealerV4](https://user-images.githubusercontent.com/65458800/129669367-bb12c456-a66b-4844-9e2d-5d2dcc8aed8a.jpg)
+![GrowtopiaStealerV4](https://user-images.githubusercontent.com/65458800/129684260-c2aea459-939c-47a5-8131-af041a55c233.jpg)
 ## ToDo
 - idk comment your ideas at issues
