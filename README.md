@@ -19,7 +19,6 @@ Other Version that stealer: https://github.com/DedSec77/CyberStealer
 - Steal MAC Address
 - Show Clipboard
 - Show what programs are exists for example:
-<br/>
 ![exists](https://user-images.githubusercontent.com/65458800/129811083-b8a131ff-b1fd-4706-a618-585037f5a8a6.jpg)
 - Steal Discord Tokens from Discord App, DiscordCanary App, DiscordPTB App, Chrome Browser, Chrome Beta Browser,FireFox Browser, Opera Browser, OperaGX Browser, Edge Browser, Yandex Browser, Brave Browser,Vivaldi Browser, Epic Privacy Browser, 360Browser, CocCoc Browser.
 - Steal Growtopia save.dat
