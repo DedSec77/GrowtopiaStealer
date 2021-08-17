@@ -1,6 +1,6 @@
 # GrowtopiaStealer
 GrowtopiaStealer powerful stealer that steals save.dat, mac address, IP information, etc... Written in C#.
-Other Version: https://github.com/DedSec77/CyberStealer
+Other Version that stealer: https://github.com/DedSec77/CyberStealer
 ## Features:
 - Steal discord tokens from Discord App, DiscordCanary App, DiscordPTB App, Chrome Browser, Chrome Beta Browser,FireFox Browser, Opera Browser, OperaGX Browser, Edge Browser, Yandex Browser, Brave Browser,Vivaldi Browser, Epic Privacy Browser, 360Browser, CocCoc Browser.
 - Steal IP Address
