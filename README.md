@@ -9,4 +9,4 @@ And build your solution
 ## Screenshot:
 ![GrowtopiaStealerV5](https://user-images.githubusercontent.com/65458800/129810186-de0523e4-84ea-4119-89f4-49f60a10f8a6.png)
 ## ToDo
-- idk comment your ideas at issues
+- Decode password from save.dat
