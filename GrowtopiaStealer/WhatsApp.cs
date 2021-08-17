@@ -7,20 +7,20 @@ using System.Threading.Tasks;
 
 namespace GrowtopiaStealer
 {
-    class Visual_Studio // https://github.com/TheC0mpany/GrowtopiaStealer
+    class WhatsApp
     {
-        #region Visual Studio Paths
-        public static string dirPathh = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86) + "\\Microsoft Visual Studio";
+        #region WhatsApp Paths
+        public static string dirPathh = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\WhatsApp";
         #endregion
 
         #region Exists or No
-        public static void VisualStudioExistOrNo()
+        public static void WhatsAppsExistOrNo()
         {
             DirectoryInfo visualstudio = new DirectoryInfo(Path.Combine(dirPathh));
             // Stop if not exists
             if (!visualstudio.Exists)
                 return;
-            Counting.VisualStudio++;
+            Counting.WhatsApp++;
         }
         #endregion
     }

